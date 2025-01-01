@@ -6,7 +6,7 @@ local LinuxPatchSha256 = "1e7c6a961abf821803b42dcd43d1c88524caa8012e333b9e47ec6f
 
 local PatchVersions = {
     ["0.5.6"] = {CXX20Patch, LinuxPatch},
-    ["0.5.7.1"] = {CXX20Patch, LinuxPatch}
+    ["0.5.7.1"] = {CXX20Patch}
 }
 
 
@@ -26,7 +26,9 @@ package("endstone")
     for version, patches in pairs(PatchVersions) do
         add_patches(version, patches[1], CXX20PatchSha256)
         if is_plat("linux") then
-            add_patches(version, patches[2], LinuxPatchSha256)
+            if #patches > 1 then
+                add_patches(version, patches[2], LinuxPatchSha256)
+            end
         end
     end
 
