@@ -14,6 +14,7 @@ package("nodejs")
     on_load(function (package)
         if package:config("uv") then
             package:add("includedirs", "include/uv/")
+            print("Enabled nodejs' built-in libuv")
         end
     end)
 
