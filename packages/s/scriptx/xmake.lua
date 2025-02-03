@@ -17,13 +17,8 @@ package("scriptx")
     on_load(function (package)
         local backend = package:config("backend")
 
-        local deps = {
-            V8 = "nodejs 22.12.0",
-        }
-
         print("Using ScriptX config: backend=" .. backend)
 
         package:add("defines", "SCRIPTX_BACKEND=" .. backend)
         package:add("defines", "SCRIPTX_BACKEND_TRAIT_PREFIX=../backend/" .. backend .. "/trait/Trait")
-        package:add("deps", deps[backend])
     end)

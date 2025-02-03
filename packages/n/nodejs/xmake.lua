@@ -5,7 +5,7 @@ package("nodejs")
     add_versions("22.12.0", "c957c1374293364a25adbb05af4326f688b5abf7a87bbd681946df72187ea3a1")
     add_versions("23.5.0", "a236175ff33698039217d1d94b8e98427d92275197550a112f27e91106807cf4")
 
-    add_configs("uv", {description = "Enable nodejs libuv", default = true, type = "boolean"})
+    add_configs("uv", {description = "add libuv included", default = true, type = "boolean"})
 
     add_includedirs("include/")
     add_includedirs("include/v8/")
