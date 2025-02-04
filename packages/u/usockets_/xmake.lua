@@ -12,7 +12,7 @@ package("usockets_")
     add_configs("uv", {description = "Enable libuv", default = false, type = "boolean"})
     add_configs("uring", {description = "Enable liburing", default = false, type = "boolean"})
     add_configs("quic", {description = "Enable lsquic", default = false, type = "boolean"})
-    add_configs("froce_remove_uv", {description = "Force remove uv", default = false, type = "boolean"})
+    add_configs("extern_uv", {description = "Use external uv", default = false, type = "boolean"})
 
     on_load(function (package)
         local ssl = package:config("ssl")
@@ -27,7 +27,7 @@ package("usockets_")
             package:add("defines", "LIBUS_NO_SSL")
         end
 
-        if package:is_plat("windows") and package:config("froce_remove_uv") == false then
+        if package:is_plat("windows") and package:config("extern_uv") == false then
             package:add("deps", "libuv")
             package:config_set("uv", true)
         else
@@ -54,6 +54,7 @@ package("usockets_")
         configs.uv = package:config("uv")
         configs.uring = package:config("uring")
         configs.quic = package:config("quic")
+        configs.extern_uv = package:config("extern_uv")
 
         os.cp(path.join(package:scriptdir(), "port", "xmake.lua"), "xmake.lua")
         import("package.tools.xmake").install(package, configs)
