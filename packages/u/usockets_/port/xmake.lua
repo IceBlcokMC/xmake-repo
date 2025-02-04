@@ -41,7 +41,7 @@ if has_config("quic") then
     add_defines("LIBUS_USE_QUIC")
 end
 
-target("usockets")
+target("usockets_")
     set_kind("$(kind)")
     set_languages("c++17")
 
