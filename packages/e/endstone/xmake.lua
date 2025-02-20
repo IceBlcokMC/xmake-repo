@@ -19,6 +19,8 @@ package("endstone")
     add_versions("0.5.7.1", "956d8f853d2d7d00844b8d9ac73afc35ef549c0405fc09c22fedf937c9fbe1d6")
     add_patches("0.5.7.1", CXX20Patch, CXX20PatchSha256)
 
+    add_versions("0.6.0", "d9d7f865629165230b6dfcb34b359186524f6784a7655f39a7140ca998455a38")
+
     on_install("windows", "linux", function (package)
         os.cp("include", package:installdir())
     end)
