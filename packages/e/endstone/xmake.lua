@@ -29,8 +29,13 @@ package("endstone")
         if deps then
             for _, dep in ipairs(deps) do
                 if dep:startswith("fmt") then
-                    -- fmt on linux must be header-only
-                    package:add("deps", dep, { configs = { header_only = true } })
+                    -- only set header_only for fmt in linux platform
+                    -- warning: please don't set fmt as header_only in windows platform
+                    if package:is_plat("linux") then
+                        package:add("deps", dep, {header_only = true})
+                    else
+                        package:add("deps", dep)
+                    end
                 else
                     package:add("deps", dep)
                 end
