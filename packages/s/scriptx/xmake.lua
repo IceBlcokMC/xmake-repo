@@ -18,7 +18,7 @@ package("scriptx")
         local backend = package:config("backend")
 
         local deps = {
-            V8 = "nodejs v22.12.0",
+            V8 = "nodejs 22.12.0",
         }
 
         print("Using ScriptX config: backend=" .. backend)
