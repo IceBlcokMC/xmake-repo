@@ -6,11 +6,14 @@ package("libnode")
         }
     }
 
+    add_urls("https://github.com/IceBlcokMC/libnode/releases/download/v$(version)/libnode-win-x64-sdk.zip")
+    add_urls("https://github.com/IceBlcokMC/libnode/releases/download/v$(version)/libnode-linux-x64-sdk.zip")
+
     add_includedirs("include/")
     add_includedirs("include/v8/")
     add_includedirs("include/uv/")
 
-    on_load(function (package)
+    on_source(function (package)
         local plat = ""
         if package:is_plat("windows") then
             plat = "win"
@@ -24,11 +27,9 @@ package("libnode")
 
         -- 遍历版本表添加对应平台版本
         for k, v in pairs(libnode_versions) do
+            printf("add version: " .. k .. " hash: " .. v[plat])
             package:add("versions", k, v[plat])
         end
-
-        local url = "https://github.com/IceBlcokMC/libnode/releases/download/v"..package:version_str() .."/libnode-"..plat.."-x64-sdk.zip"
-        package:add("urls", url)
     end)
 
     on_install(function (package)
