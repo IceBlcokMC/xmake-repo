@@ -6,6 +6,7 @@ package("economy_bridge")
     add_urls("https://github.com/IceBlcokMC/EconomyBridge.git")
     add_versions("0.1.0", "948d0d92ab91e70df8333f2c8fb907c2e6640f90")
     add_versions("0.2.0", "91ea18b96f151a9c6eac0b5f470564124d541b7f")
+    add_versions("0.3.0", "a750eca678a2f319334ce7598c0ac6549ece582a")
 
     on_install(function (package)
         import("package.tools.xmake").install(package)
