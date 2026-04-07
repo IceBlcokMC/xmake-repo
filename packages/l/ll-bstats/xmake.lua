@@ -12,6 +12,12 @@ package("ll-bstats")
 
     add_deps("cpr[ssl=y] 1.12.0")
 
+    add_configs("target_type", {default = "server", values = {"server", "client"}})
+
     on_install(function (package)
-        import("package.tools.xmake").install(package)
+        if package:config("target_type") == "server" then
+            import("package.tools.xmake").install(package)
+        else
+            import("package.tools.xmake").install(package, {"--target_type=client"})
+        end
     end)
