@@ -9,6 +9,7 @@ package("ll-bstats")
     add_versions("0.1.2", "339f0d17fbca57ff0b1e5573bc61700213a7916f")
     add_versions("0.2.0", "59d46ef6b4bb5a15d04509adafb6760fd54ac49a")
     add_versions("0.3.0", "ecb29493791ea7e6633f30e4aebab8b393eb28de")
+    add_versions("0.4.0", "da1dfe8fafee648def65fc9d9284e8ffc44f47b0")
 
     add_deps("cpr[ssl=y] 1.12.0")
 
