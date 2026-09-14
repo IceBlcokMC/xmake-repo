@@ -9,6 +9,7 @@ package("debug_shape")
     add_versions("0.3.0", "6de0232c33223750bf254691350acd7837c47d42")
     add_versions("0.5.0", "0efe5753632b8430e34b3f553748050f9acef3fe")
     add_versions("0.6.0", "56165e30d12d3b3a786e3812d87296ac476dc6de")
+    add_versions("0.7.0", "c6ccf2d09f8d14e6ad7dfa616fddadd99dd8bc9e")
 
     on_install(function (package)
         import("package.tools.xmake").install(package)

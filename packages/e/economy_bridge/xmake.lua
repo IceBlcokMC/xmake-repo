@@ -10,6 +10,7 @@ package("economy_bridge")
     add_versions("0.4.0", "c60be595f610b8b860a62faf92b1e2c887b57771")
     add_versions("0.5.0", "f313315647579c2ab0c2655dc67cdf3274a65135")
     add_versions("2026.8.29", "16e7bf05c40e2829c99b319b3e118758b27d5fec")
+    add_versions("0.6.0", "20f36ba41883b430b0de001c514e91b66f1ee6e2")
 
     on_install(function (package)
         import("package.tools.xmake").install(package)
