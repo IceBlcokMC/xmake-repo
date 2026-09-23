@@ -12,8 +12,9 @@ package("ll-bstats")
     add_versions("0.4.0", "da1dfe8fafee648def65fc9d9284e8ffc44f47b0")
     add_versions("0.5.0", "b5c93f40808cb2141ece415276b59f316d46d278")
     add_versions("0.6.0", "b9a8670aa9707a63e5582286eb3a32aadd8bc382")
+    add_versions("0.7.0", "6762cfcc37c554129a8f8bf7fc707508ab5a3ef9")
 
-    add_deps("cpr[ssl=y] 1.12.0")
+    add_deps("cpr 1.12.0")
 
     add_configs("target_type", {default = "server", values = {"server", "client"}})
 
